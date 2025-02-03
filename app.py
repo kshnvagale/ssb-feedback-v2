@@ -3,6 +3,7 @@ import pandas as pd
 import requests
 import markdown2
 from io import StringIO
+import os
 
 app = Flask(__name__)
 
@@ -37,4 +38,5 @@ def get_feedback():
     return jsonify({'feedback_html': feedback_html})
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5002)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
