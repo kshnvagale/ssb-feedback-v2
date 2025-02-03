@@ -31,11 +31,10 @@ def get_feedback():
     if matching_row.empty:
         return jsonify({'error': 'Email not found'}), 404
     
-    # Get feedback and convert to HTML
+    # Get feedback text
     feedback = matching_row.iloc[0]['Feedback']
-    feedback_html = markdown2.markdown(feedback)
     
-    return jsonify({'feedback_html': feedback_html})
+    return jsonify({'feedback': feedback})
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5002))

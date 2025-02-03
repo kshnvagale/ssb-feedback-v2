@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feedback Lookup</title>
+    <title>SSB Feedback Lookup</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
@@ -15,13 +15,33 @@
         </label>
         <em>Dark Mode</em>
     </div>
+    
     <div class="container">
-        <h1>Feedback Lookup</h1>
-        <div class="input-container">
+        <h1>SSB Feedback Lookup</h1>
+        <div class="search-container">
             <input type="email" id="email" placeholder="Enter your email" required>
+            <button id="viewFeedback" class="view-button">View Feedback</button>
         </div>
-        <div id="feedback-container" class="markdown-body"></div>
+        
+        <div id="feedback-container" class="feedback-container">
+            <!-- Final Decision Section -->
+            <div id="final-decision" class="section"></div>
+            
+            <!-- Ratings Section -->
+            <div id="ratings" class="section">
+                <div class="ratings-grid">
+                    <div id="evaluation-ratings"></div>
+                    <div id="question-ratings"></div>
+                </div>
+            </div>
+            
+            <!-- Detailed Feedback Sections -->
+            <div id="evaluation-feedback" class="section"></div>
+            <div id="question-feedback" class="section"></div>
+        </div>
+        
         <div id="error-message"></div>
+        <div id="loading" class="loading-spinner"></div>
     </div>
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
