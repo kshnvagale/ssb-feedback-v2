@@ -1,26 +1,29 @@
 # Feedback Lookup Application
 
-A simple web application that allows users to look up feedback using their email address.
+A web application that allows users to look up feedback by email address. The application fetches data from a CSV file and displays the feedback in a beautifully formatted markdown style.
 
 ## Features
+
 - Email-based feedback lookup
-- Dark mode support
+- Dark/Light mode toggle
 - Markdown rendering of feedback
 - Responsive design
+- Error handling
 
-## Deployment on Render.com
+## Deployment on Render
 
-1. Create a new account on [Render](https://render.com) if you haven't already
-2. Click on "New +" and select "Web Service"
-3. Connect your GitHub repository
-4. Fill in the following details:
-   - Name: `feedback-lookup` (or your preferred name)
-   - Environment: `Python 3`
+1. Push your code to a GitHub repository
+2. Go to [Render Dashboard](https://dashboard.render.com)
+3. Click on "New +" and select "Web Service"
+4. Connect your GitHub repository
+5. Configure the service:
+   - Name: Choose a name for your service
+   - Environment: Python 3
    - Build Command: `pip install -r requirements.txt`
    - Start Command: `gunicorn app:app`
-5. Click "Create Web Service"
+   - Select the appropriate instance type
 
-The application will be automatically deployed and you'll get a URL where it's accessible.
+The application will be automatically deployed and available at your Render URL.
 
 ## Local Development
 
@@ -40,4 +43,4 @@ pip install -r requirements.txt
 python app.py
 ```
 
-4. Visit `http://localhost:5000` in your browser
+The application will be available at `http://localhost:5002`
