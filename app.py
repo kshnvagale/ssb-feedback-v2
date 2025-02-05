@@ -10,8 +10,9 @@ app = Flask(__name__)
 CSV_URL = "https://metabase.interviewbit.com/public/question/a408335b-14ff-47dd-9a31-74072fccfe7c.csv"
 
 @app.route('/')
-def index():
-    return render_template('index.html')
+@app.route('/<email>')
+def index(email=None):
+    return render_template('index.html', email=email)
 
 @app.route('/get_feedback', methods=['POST'])
 def get_feedback():
