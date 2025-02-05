@@ -18,7 +18,7 @@
     <div class="container">
         <h1>Feedback Lookup</h1>
         <div class="input-container">
-            <input type="email" id="email" placeholder="Enter your email" required>
+            <input type="email" id="email" placeholder="Enter your email" value="{{ email or '' }}" required>
         </div>
         <div id="feedback-container" class="markdown-body"></div>
         <div id="error-message"></div>
